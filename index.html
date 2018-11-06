@@ -1,250 +1,519 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" itemscope itemtype="http://schema.org/Article">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<base href="http://www.templatemo.com/" />
-<title>template 479 sigma</title>
-<meta name="description" content="Sigma Bootstrap 4 theme features metro-style image gallery with responsive lightbox and multiple content columns. This is a fluid layout easy to customize for your website." />
-<meta itemprop="headline" content="479 sigma">
-<meta itemprop="name" content="479 sigma">
-<meta itemprop="description" content="Sigma Bootstrap 4 theme features metro-style image gallery with responsive lightbox and multiple content columns. This is a fluid layout easy to customize for your website.">
-<meta itemprop="image" content="http://cdn.templatemo.com/screenshots/full-template-479-sigma.jpg">
-<meta itemprop="datePublished" content="2015-07-27" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.templatemo.com/tm-479-sigma" />
-<meta property="og:title" content="479 sigma" />
-<meta property="og:headline" content="479 sigma" />
-<meta property="og:image" content="http://cdn.templatemo.com/screenshots/full-template-479-sigma.jpg" />
-<meta property="og:site_name" content="templatemo" />
-<meta property="og:description" content="Sigma Bootstrap 4 theme features metro-style image gallery with responsive lightbox and multiple content columns. This is a fluid layout easy to customize for your website." />
-<meta name="author" content="templatemo">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="/tm_style.css?15apr" rel="stylesheet" type="text/css" />
-<link rel="publisher" href="https://plus.google.com/+templatemo"/>
-<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
 
-<script type="text/javascript">
-window.google_analytics_uacct = "UA-732601-9";
-</script>
-</head>
-<body>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div id="templatemo-container">
-    <div id="top_section">
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="pingback" href="http://grandma.online" />
+		<title>Grandma - Yến Bà Ngoại &ndash; 100% từ thiên nhiên</title>
+    <!-- Slider Template -->
+    <script type="text/template" id="wc_product_slider_widget_item_tpl">
+    	{{ var srcset = '', sizes = ''; }}
+		{{ if ( typeof img_srcset !== 'undefined' ) { srcset = img_srcset; } }}
+		{{ if ( typeof img_sizes !== 'undefined' ) { sizes = img_sizes; } }}
+
+		{{ var item_title_html = ''; }}
+				{{ if ( item_title != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-name"><a href="' + item_link + '">' + item_title + '</a></div>'; }}
+		{{ } }}
+				{{ if ( product_price != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-price">'+ product_price +'</div>'; }}
+		{{ } }}
+				{{ var cycle_desc = '<a class="cycle-product-linked" href="' + item_link + '">View this Product</a>'; }}
+				<img class="cycle-wc-product-image"			data-cycle-number="{{= index_product }}"			srcset="{{- srcset }}"			sizes="{{- sizes }}"			src="{{= img_url }}"			name="{{- item_title_html }}"			title=""			data-cycle-desc="{{ if ( item_link != "" ) { }} {{- cycle_desc }}{{ } }}"            style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "            {{ if ( typeof extra_attributes !== "undefined" && extra_attributes != "" ) { }} {{= extra_attributes }} {{ } }}        />
+	</script>
+
+    <script type="text/template" id="wc_product_slider_mobile_item_tpl">
+    	{{ var srcset = '', sizes = ''; }}
+		{{ if ( typeof img_srcset !== 'undefined' ) { srcset = img_srcset; } }}
+		{{ if ( typeof img_sizes !== 'undefined' ) { sizes = img_sizes; } }}
+
+		{{ var item_title_html = ''; }}
+		{{ if ( item_title != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-name"><a href="' + item_link + '">' + item_title + '</a></div>'; }}
+		{{ } }}
+		{{ if ( product_price != '' ) { }}
+			{{ item_title_html += '<div class="cycle-product-price">'+ product_price +'</div>'; }}
+		{{ } }}
+		{{ var category_tag_link = ''; }}
+		{{ if ( category_link != '' ) { }}
+			{{ category_tag_link = '<div class="cycle-mobile-skin-category-linked-container"><a class="cycle-category-linked" href="' + category_link + '">View all Products in this Category</a></div>'; }}
+		{{ } }}
+		{{ if ( tag_link != '' ) { }}
+			{{ category_tag_link = '<div class="cycle-mobile-skin-tag-linked-container"><a class="cycle-tag-linked" href="' + tag_link + '">View all Products in this Tag</a></div>'; }}
+		{{ } }}
+		{{ if ( is_used_mobile_skin == 'true' ) { }}
+			<img class="cycle-wc-product-image"				srcset="{{- srcset }}"				sizes="{{- sizes }}"				src="{{= img_url }}"				title="{{- item_title_html }}"				data-cycle-desc="{{- category_tag_link }}"				style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "			/>
+		{{ } else { }}
+			<img class="cycle-wc-product-image"				srcset="{{- srcset }}"				sizes="{{- sizes }}"				src="{{= img_url }}"				title="{{- item_title_html }}"				alt=""				style="position:absolute; top:0; left:0; {{ if ( index_product > 1 ) { }} visibility:hidden; {{ } }} "			/>		{{ } }}
+	</script>
+
+    <script type="text/template" id="wc_product_slider_card_item_tpl"><div></div>
+	</script>
+
     
-    	<div class="templatemo-logo">
-        	<a href="/" target="_parent"><img src="http://cdn.templatemo.com/images/templatemo-logo.png" alt="templatemo" title="templatemo" width="240" height="45" border="0" /></a>
-       	  	<h1 class="templatemo-slogan">free HTML5 CSS templates</h1>
-      	</div>
+<!-- This site is optimized with the Yoast SEO plugin v4.2.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="100% từ thiên nhiên"/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="http://grandma.online/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Yến Bà Ngoại &ndash; 100% từ thiên nhiên" />
+<meta property="og:description" content="100% từ thiên nhiên" />
+<meta property="og:url" content="http://grandma.online/" />
+<meta property="og:site_name" content="Yến Bà Ngoại" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="100% từ thiên nhiên" />
+<meta name="twitter:title" content="Yến Bà Ngoại - Tổ yến Bạc Liêu &ndash; 100% từ thiên nhiên" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/viettranyen.com\/en\/","name":"Vi\u1ec7t Tr\u00e2n Y\u1ebfn - Tr\u00e2n ph\u1ea9m T\u1ed5 y\u1ebfn Vi\u1ec7t nam","potentialAction":{"@type":"SearchAction","target":"http:\/\/viettranyen.com\/en\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"Organization","url":"http:\/\/viettranyen.com\/en\/","sameAs":[],"@id":"#organization","name":"Viet Tran Yen","logo":"http:\/\/viettranyen.com\/wp-content\/uploads\/2016\/11\/cropped-TO-YEN-512x512.png"}</script>
+<!-- / Yoast SEO plugin. -->
 
-    	<div class="templatemo_clear"></div>
-        
-  </div>
+<link rel='dns-prefetch' href='//w.sharethis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Việt Trân Yến - Trân phẩm Tổ yến Việt nam &raquo; Feed" href="http://viettranyen.com/en/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Việt Trân Yến - Trân phẩm Tổ yến Việt nam &raquo; Comments Feed" href="http://viettranyen.com/en/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/viettranyen.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.11"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='woocommerce-layout-css'  href='//viettranyen.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=2.6.14' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'  href='//viettranyen.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=2.6.14' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css'  href='//viettranyen.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=2.6.14' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='http://viettranyen.com/wp-content/themes/maxstore/css/bootstrap.css?ver=3.3.4' type='text/css' media='all' />
+<link rel='stylesheet' id='maxstore-stylesheet-css'  href='http://viettranyen.com/wp-content/themes/maxstore/style.css?ver=1.3.7' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='http://viettranyen.com/wp-content/themes/maxstore/css/font-awesome.min.css?ver=4.6.3' type='text/css' media='all' />
+<link rel='stylesheet' id='z-googlemaps.css-css'  href='http://viettranyen.com/wp-content/plugins/z-googlemaps/css/z-googlemaps.css?ver=4.7.11' type='text/css' media='all' />
+<link rel='stylesheet' id='kirki-styles-maxstore_settings-css'  href='http://viettranyen.com/wp-content/plugins/kirki/assets/css/kirki-styles.css' type='text/css' media='all' />
+<style id='kirki-styles-maxstore_settings-inline-css' type='text/css'>
+.rsrc-header-text a{color:#222 !important;}h2.site-desc, h3.site-desc{color:#B6B6B6;}body{background-color:rgba(255,255,255,1);background-repeat:no-repeat;background-attachment:fixed;background-position:center center;-webkit-background-size:cover;-moz-background-size:cover;-ms-background-size:cover;-o-background-size:cover;background-size:cover;}
+</style>
+<script type='text/javascript' src='http://viettranyen.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://viettranyen.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://viettranyen.com/wp-content/themes/maxstore/js/bootstrap.js?ver=3.3.4'></script>
+<script type='text/javascript' src='http://viettranyen.com/wp-content/themes/maxstore/js/customscript.js?ver=1.3.7'></script>
+<script id='st_insights_js' type='text/javascript' src='http://w.sharethis.com/button/st_insights.js?publisher=eba0f3ba-f9ab-408c-bc68-c28af5afe749&#038;product=feather'></script>
+<link rel='https://api.w.org/' href='http://viettranyen.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://viettranyen.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://viettranyen.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.11" />
+<meta name="generator" content="WooCommerce 2.6.14" />
+<link rel="alternate" href="http://viettranyen.com/en/" hreflang="en" />
+<link rel="alternate" href="http://viettranyen.com/vi/" hreflang="vi" />
+<link rel="alternate" href="http://viettranyen.com/zh/" hreflang="zh" />
+<link rel="alternate" href="http://viettranyen.com/" hreflang="x-default" />
 
-    <div id="templatemo-menu">
-      <ul class="tm-new-menu">
-        <li><a href="/" target="_parent"><span>Home</span></a></li>
-        <li><a href="/page/1" target="_parent"><span>Free Templates</span></a></li>
-        <li><a rel="nofollow" href="/external/tooplate-website" target="_parent"><span>HTML CSS</span></a></li>
-        <li><a href="/tag" target="_parent"><span>Tags</span></a></li>
-        <li><a href="/links" target="_parent"><span>Links</span></a></li>
-        <li><a href="/contact" target="_parent"><span>Contact</span></a></li>
-      </ul>
-      <div class="templatemo_clear"></div>
-    </div>
-    
-<div class="templatemo_clear h10"></div>
+<style type="text/css"></style>
 
-<div id="content_area">
+<style type="text/css">
+.synved-social-resolution-single {
+display: inline-block;
+}
+.synved-social-resolution-normal {
+display: inline-block;
+}
+.synved-social-resolution-hidef {
+display: none;
+}
 
-	<div class="inner_tube" align="center">
-      	<h1 class="title">Sigma Template</h1>
-      	<p class="description">Sigma Bootstrap 4 theme features metro-style image gallery with responsive lightbox and multiple content columns. This is a fluid layout easy to customize for your website.</p>
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx),
+only screen and (min-resolution: 192dpi) {
+	.synved-social-resolution-normal {
+	display: none;
+	}
+	.synved-social-resolution-hidef {
+	display: inline-block;
+	}
+}
+</style>
+<link rel="icon" href="http://viettranyen.com/wp-content/uploads/2016/11/cropped-TO-YEN-512x512-32x32.png" sizes="32x32" />
+<link rel="icon" href="http://viettranyen.com/wp-content/uploads/2016/11/cropped-TO-YEN-512x512-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="http://viettranyen.com/wp-content/uploads/2016/11/cropped-TO-YEN-512x512-180x180.png" />
+<meta name="msapplication-TileImage" content="http://viettranyen.com/wp-content/uploads/2016/11/cropped-TO-YEN-512x512-270x270.png" />
+	</head>
+	<body id="blog" class="home blog">
+<div class="container rsrc-container" role="main">
+	 
+			<div class="top-section row"> 
+			<div class="top-infobox text-left col-xs-6">
+				Email: viettranyen@yahoo.com 
+			</div> 
+			<div class="top-infobox text-right col-xs-6">
+				Hotline: +84 91 9960738 
+			</div>               
+		</div>
+		<div class="row" >
+				<header id="site-header" class="col-sm-4 hidden-xs rsrc-header text-center col-sm-push-4" role="banner"> 
+							<div class="rsrc-header-img">
+					<a href="http://viettranyen.com/en/"><img src="http://viettranyen.com/wp-content/uploads/2016/11/VIET-TRAN-YEN-Red.jpg" title="Việt Trân Yến &#8211; Trân phẩm Tổ yến Việt nam" /></a>
+				</div>
+			   
+		</header> 
+		<div class="header-login col-sm-4 col-xs-4 col-sm-pull-4"> 
+												<a href="http://viettranyen.com/en/tai-khoan/" title="Login / Register">Login / Register</a>
+				 
+					</div>
+				 
+			<div class="header-cart text-right col-sm-4 col-xs-8">
+							<div class="header-cart-inner">
+					
+				<a class="cart-contents text-right" href="http://viettranyen.com/en/gio-hang/" title="View your shopping cart">
+					<i class="fa fa-shopping-cart"><span class="count">0</span></i><span class="amount-title hidden-sm hidden-xs">Cart </span><span class="amount-cart">0&nbsp;VNĐ</span> 
+				</a>
+								<ul class="site-header-cart menu list-unstyled">
+					<li>
+						<div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div>					</li>
+				</ul>
+			</div>
+						</div>
+			</div>
+		<div class="rsrc-top-menu row" >
+		<nav id="site-navigation" class="navbar navbar-inverse" role="navigation">
 
-    </div>
-    
-	<div class="inner_tube" align="center">
-    	<ins class='dcmads' style='display:inline-block;width:908px;height:90px'
-            data-dcm-placement='N34703.1932900TEMPLATEMO.COM/B8599899.117502503'
-            data-dcm-rendering-mode='iframe'
-            data-dcm-https-only
-            data-dcm-resettable-device-id=''
-            data-dcm-app-id=''>
-          <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
-        </ins>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<header class="visible-xs-block" role="banner"> 
+											<div class="rsrc-header-img menu-img text-left">
+							<a href="http://viettranyen.com/en/"><img src="http://viettranyen.com/wp-content/uploads/2016/11/VIET-TRAN-YEN-Red.jpg" title="Việt Trân Yến &#8211; Trân phẩm Tổ yến Việt nam" /></a>
+						</div>
+					   
+				</header>
+			</div>
+			<div class="collapse navbar-collapse navbar-1-collapse"><ul id="menu-vietnamese-menu" class="nav navbar-nav"><li id="menu-item-21-en" class="lang-item lang-item-6 lang-item-en lang-item-first current-lang menu-item menu-item-type-custom menu-item-object-custom current_page_item menu-item-home menu-item-21-en"><a title="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHzSURBVHjaYkxOP8IAB//+Mfz7w8Dwi4HhP5CcJb/n/7evb16/APL/gRFQDiAAw3JuAgAIBEDQ/iswEERjGzBQLEru97ll0g0+3HvqMn1SpqlqGsZMsZsIe0SICA5gt5a/AGIEarCPtFh+6N/ffwxA9OvP/7//QYwff/6fZahmePeB4dNHhi+fGb59Y4zyvHHmCEAAAW3YDzQYaJJ93a+vX79aVf58//69fvEPlpIfnz59+vDhw7t37968efP3b/SXL59OnjwIEEAsDP+YgY53b2b89++/awvLn98MDi2cVxl+/vl6mituCtBghi9f/v/48e/XL86krj9XzwEEEENy8g6gu22rfn78+NGs5Ofr16+ZC58+fvyYwX8rxOxXr169fPny+fPn1//93bJlBUAAsQADZMEBxj9/GBxb2P/9+S/R8u3vzxuyaX8ZHv3j8/YGms3w8ycQARmi2eE37t4ACCDGR4/uSkrKAS35B3TT////wADOgLOBIaXIyjBlwxKAAGKRXjCB0SOEaeu+/y9fMnz4AHQxCP348R/o+l+//sMZQBNLEvif3AcIIMZbty7Ly6t9ZmXl+fXj/38GoHH/UcGfP79//BBiYHjy9+8/oUkNAAHEwt1V/vI/KBY/QSISFqM/GBg+MzB8A6PfYC5EFiDAABqgW776MP0rAAAAAElFTkSuQmCC&quot; title=&quot;English&quot; alt=&quot;English&quot; /&gt;&lt;span style=&quot;margin-left:0.3em;&quot;&gt;English&lt;/span&gt;" href="http://viettranyen.com/en/" hreflang="en-US" lang="en-US"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHzSURBVHjaYkxOP8IAB//+Mfz7w8Dwi4HhP5CcJb/n/7evb16/APL/gRFQDiAAw3JuAgAIBEDQ/iswEERjGzBQLEru97ll0g0+3HvqMn1SpqlqGsZMsZsIe0SICA5gt5a/AGIEarCPtFh+6N/ffwxA9OvP/7//QYwff/6fZahmePeB4dNHhi+fGb59Y4zyvHHmCEAAAW3YDzQYaJJ93a+vX79aVf58//69fvEPlpIfnz59+vDhw7t37968efP3b/SXL59OnjwIEEAsDP+YgY53b2b89++/awvLn98MDi2cVxl+/vl6mituCtBghi9f/v/48e/XL86krj9XzwEEEENy8g6gu22rfn78+NGs5Ofr16+ZC58+fvyYwX8rxOxXr169fPny+fPn1//93bJlBUAAsQADZMEBxj9/GBxb2P/9+S/R8u3vzxuyaX8ZHv3j8/YGms3w8ycQARmi2eE37t4ACCDGR4/uSkrKAS35B3TT////wADOgLOBIaXIyjBlwxKAAGKRXjCB0SOEaeu+/y9fMnz4AHQxCP348R/o+l+//sMZQBNLEvif3AcIIMZbty7Ly6t9ZmXl+fXj/38GoHH/UcGfP79//BBiYHjy9+8/oUkNAAHEwt1V/vI/KBY/QSISFqM/GBg+MzB8A6PfYC5EFiDAABqgW776MP0rAAAAAElFTkSuQmCC" title="English" alt="English" /><span style="margin-left:0.3em;">English</span></a></li>
+<li id="menu-item-21-vi" class="lang-item lang-item-9 lang-item-vi menu-item menu-item-type-custom menu-item-object-custom menu-item-21-vi"><a title="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC&quot; title=&quot;Tiếng Việt&quot; alt=&quot;Tiếng Việt&quot; /&gt;&lt;span style=&quot;margin-left:0.3em;&quot;&gt;Tiếng Việt&lt;/span&gt;" href="http://viettranyen.com/vi/" hreflang="vi" lang="vi"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC" title="Tiếng Việt" alt="Tiếng Việt" /><span style="margin-left:0.3em;">Tiếng Việt</span></a></li>
+<li id="menu-item-21-zh" class="lang-item lang-item-13 lang-item-zh menu-item menu-item-type-custom menu-item-object-custom menu-item-21-zh"><a title="&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFqSURBVHjaYrzOwPAPjJgYQEDAleHVbhADIvgHLPgHiQ0QQCxAlkR9NW8sw+cV/1gV/7Gb/hV4+vfzhj8Mv/78//Pn/+/f/8AkhH1t0yaAAAJp4I37zyz2lDfu79uqv/++/WYz+cuq/vvLxt8gdb+A5K9/v34B2SyyskBLAAII5JAva/7/+/z367a/f3/8ZuT9+//Pr78vQUrB6n4CSSj6/RuoASCAWEDO/fD3ddEfhv9/OE3/sKj8/n7k9/fDQNUIs/+DVf8HawAIIJCT/v38C3Hr95N/GDh/f94AVvT7N8RUBpjxQAVADQABBNLw/y/Ifwy/f/399ufTOpDBEPf8g5sN0QBEDAwAAQTWABEChgOSA9BVA00E2wAQQCANQBbEif/AzoCqgLkbbBYwWP/+//sXqBYggFhAkfL7D7OkJFCOCSj65zfUeFjwg8z++/ffX5AGoGKAAGI8jhSRyIw/SJH9D4aAYQoQYAA6rnMw1jU2vQAAAABJRU5ErkJggg==&quot; title=&quot;中文 (中国)&quot; alt=&quot;中文 (中国)&quot; /&gt;&lt;span style=&quot;margin-left:0.3em;&quot;&gt;中文 (中国)&lt;/span&gt;" href="http://viettranyen.com/zh/" hreflang="zh-CN" lang="zh-CN"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFqSURBVHjaYrzOwPAPjJgYQEDAleHVbhADIvgHLPgHiQ0QQCxAlkR9NW8sw+cV/1gV/7Gb/hV4+vfzhj8Mv/78//Pn/+/f/8AkhH1t0yaAAAJp4I37zyz2lDfu79uqv/++/WYz+cuq/vvLxt8gdb+A5K9/v34B2SyyskBLAAII5JAva/7/+/z367a/f3/8ZuT9+//Pr78vQUrB6n4CSSj6/RuoASCAWEDO/fD3ddEfhv9/OE3/sKj8/n7k9/fDQNUIs/+DVf8HawAIIJCT/v38C3Hr95N/GDh/f94AVvT7N8RUBpjxQAVADQABBNLw/y/Ifwy/f/399ufTOpDBEPf8g5sN0QBEDAwAAQTWABEChgOSA9BVA00E2wAQQCANQBbEif/AzoCqgLkbbBYwWP/+//sXqBYggFhAkfL7D7OkJFCOCSj65zfUeFjwg8z++/ffX5AGoGKAAGI8jhSRyIw/SJH9D4aAYQoQYAA6rnMw1jU2vQAAAABJRU5ErkJggg==" title="中文 (中国)" alt="中文 (中国)" /><span style="margin-left:0.3em;">中文 (中国)</span></a></li>
+<li id="menu-item-70" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-70"><a title="Công dụng của yến" href="http://viettranyen.com/vi/category/cong-dung-cua-yen/">Công dụng của yến</a></li>
+<li id="menu-item-72" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-72"><a title="Home" href="http://viettranyen.com/zh/category/home/">Home</a></li>
+<li id="menu-item-71" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-71"><a title="Trang chủ" href="http://viettranyen.com/vi/category/trang-chu/">Trang chủ</a></li>
+<li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73"><a title="Cẩm nang yến" href="http://viettranyen.com/vi/category/cam-nang-yen/">Cẩm nang yến</a></li>
+</ul></div>		</nav>
 	</div>
-    
-  	
-    <div class="templatemo_clear"></div>
-    
-	<div id="template_preview">
-    	<img src="http://cdn.templatemo.com/screenshots/full-template-479-sigma.jpg" alt="templatemo 479 sigma" title="templatemo 479 sigma" width="100%" height="100%" border="0" />
+		 
+		<div class="header-line-search row visible">
+	<div class="header-categories col-md-2">
+		<ul class="accordion list-unstyled" id="view-all-guides">
+			<li class="accordion-group list-unstyled">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#view-all-guides" href="#collapseOne">Shop by category</a>
+				<div id="collapseOne" class="accordion-body collapse">
+					<div class="accordion-inner">
+						<ul class="list-unstyled">
+								<li class="cat-item cat-item-62"><a href="http://viettranyen.com/en/product-category/raw-bird-nest/" >Raw Bird’s Nest</a> (3)
+</li>
+	<li class="cat-item cat-item-59"><a href="http://viettranyen.com/en/product-category/proceed-bird-nest/" >Raw Clean Edible Bird’s Nest</a> (3)
+</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul >
     </div>
-    
-  <div id="one_column">
-	<div class="tn_list_preview">
-    	<div class="wix_200">
+	    <div class="header-search-form col-md-6">
+		<div class="header-search-title col-sm-2 col-xs-3">
+			Search		</div>
+		<form role="search" method="get" action="http://viettranyen.com/en/">
+			<select class="col-sm-3 col-xs-3" name="product_cat">
+				<option value="">All</option> 
+				<option value="raw-bird-nest">Raw Bird’s Nest (3)</option><option value="proceed-bird-nest">Raw Clean Edible Bird’s Nest (3)</option>			</select>
+			<input type="hidden" name="post_type" value="product" />
+			<input class="col-sm-7 col-xs-6" name="s" type="text" placeholder="Search for products"/>
+			<button type="submit">Go</button>
+		</form>
+    </div>
+			<div class="social-section col-md-4">
+			<span class="social-section-title hidden-md">
+				Follow Us 
+			</span>
+				<div class="social-links">
+			<ul>
+				<li><a href="https://www.facebook.com/viettranyen" target="_blank"><i class="fa fa-facebook"></i></a></li><li><a href="http://hochiminhbn@gmail.com" target="_blank"><i class="fa fa-google-plus"></i></a></li><li><a href="http://viettranyen@yahoo.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>			</ul>
+		</div><!-- .social-links -->
+		              
+		</div>
+	 
+</div>	    
 
-    <ins class='dcmads' style='display:inline-block;width:200px;height:200px'
-        data-dcm-placement='N34703.1932900TEMPLATEMO.COM/B8599899.120327641'
-        data-dcm-rendering-mode='iframe'
-        data-dcm-https-only
-        data-dcm-resettable-device-id=''
-        data-dcm-app-id=''>
-      <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
-    </ins>
+	<!-- start content container --> 
+	<div class="row rsrc-fullwidth-home"> 	
+		<div class="rsrc-home">                                   
+			<div class="rsrc-post-content post-67 post type-post status-publish format-standard has-post-thumbnail hentry category-khong-phan-loai">                                                      
+				<div class="entry-content">
+					 
+	<div class="top-area row no-gutter">       
+		<div class="topfirst-img col-sm-6">     
+			<div class="top-grid-img">
+				  
+					<img width="600" height="600" src="http://viettranyen.com/wp-content/uploads/2016/11/5-6.jpg" title="Bird Nest" alt="Premium Bird&#039;s Nest"> 
+				  
+			</div>
+			<div class="top-grid-heading">
+									<h2>
+						Bird Nest					</h2>
+				  
+									<p>
+						Premium Bird&#039;s Nest					</p>
+				 
+									<p>                                      
+						<div class="btn btn-primary btn-md outline">
+							<a href="#">
+								View More							</a>
+						</div>                                  
+					</p>
+				   
+			</div>    
+		</div>
 
+		<div class="topsecond-img col-sm-6">
+						<div class="top-grid-cat col-xs-6">
+				<a href="http://viettranyen.com/en/product-category/proceed-bird-nest/"> 
+					<div class="top-grid-img">
+						<img src="http://viettranyen.com/wp-content/plugins/woocommerce/assets/images/placeholder.png" alt="Placeholder" width="300px" height="300px" />					</div>
+					<div class="top-grid-heading">
+						<h2>
+							Raw Clean Edible Bird’s Nest						</h2>
+						<p>
+													</p>
+					</div>
+				</a> 
+			</div>
+			<div class="top-grid-products">
+				<ul class="list-unstyled">
+											<li class="product-cats col-xs-6">    
+							<a href="http://viettranyen.com/en/product/raw-clean-edible-birds-nest-b-100g/" title="Raw Clean Edible Bird’s Nest &#8211; B &#8211; 100G">
+								
+	<span class="onsale">Sale!</span>
+								<div class="top-grid-img">  
+									<img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-300x300.jpg" class="attachment-maxstore-home-top size-maxstore-home-top wp-post-image" alt="" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" />								</div>
+								<div class="top-grid-heading">
+									<h2>Raw Clean Edible Bird’s Nest &#8211; B &#8211; 100G</h2>
+									<span class="price"><del><span class="woocommerce-Price-amount amount">4,900,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">4,500,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span>
+								</div>                    
+							</a>
+						</li>
+											<li class="product-cats col-xs-6">    
+							<a href="http://viettranyen.com/en/product/proceed-birds-nest-100g/" title="Raw Clean Edible Bird’s Nest  A &#8211; 100G">
+								
+	<span class="onsale">Sale!</span>
+								<div class="top-grid-img">  
+									<img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-300x300.jpg" class="attachment-maxstore-home-top size-maxstore-home-top wp-post-image" alt="yến sạch A" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" />								</div>
+								<div class="top-grid-heading">
+									<h2>Raw Clean Edible Bird’s Nest  A &#8211; 100G</h2>
+									<span class="price"><del><span class="woocommerce-Price-amount amount">5,300,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">4,900,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span>
+								</div>                    
+							</a>
+						</li>
+											<li class="product-cats col-xs-6">    
+							<a href="http://viettranyen.com/en/product/clean-product-c-100g/" title="Raw Clean Edible Bird’s Nest &#8211; C &#8211; 100g">
+								
+	<span class="onsale">Sale!</span>
+								<div class="top-grid-img">  
+									<img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-300x300.jpg" class="attachment-maxstore-home-top size-maxstore-home-top wp-post-image" alt="" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" />								</div>
+								<div class="top-grid-heading">
+									<h2>Raw Clean Edible Bird’s Nest &#8211; C &#8211; 100g</h2>
+									<span class="price"><del><span class="woocommerce-Price-amount amount">4,300,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">3,900,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span>
+								</div>                    
+							</a>
+						</li>
+														</ul>
+			</div>    
+		</div>   
+	</div>
+					<h2 class="text-center clear demo-categories">
+  Our categories</h2>
+<hr />								
+<div class="woocommerce columns-4"><ul class="products">
+<li class="product-category product first">
+	<a href="http://viettranyen.com/en/product-category/raw-bird-nest/"><img src="http://viettranyen.com/wp-content/uploads/2016/11/Thu-hoach-B-300x300.jpg" alt="Raw Bird’s Nest" width="300" height="300" />		<h3>
+			Raw Bird’s Nest <mark class="count">(3)</mark>		</h3>
+		</a></li>
+<li class="product-category product">
+	<a href="http://viettranyen.com/en/product-category/proceed-bird-nest/"><img src="http://viettranyen.com/wp-content/uploads/2016/11/So-che-A-300x300.jpg" alt="Raw Clean Edible Bird’s Nest" width="300" height="300" />		<h3>
+			Raw Clean Edible Bird’s Nest <mark class="count">(3)</mark>		</h3>
+		</a></li>
+</ul>
+</div>  								
+<h2 class="text-center clear demo-products">
+  Recent products</h2>
+<hr />								
+<div class="woocommerce columns-4">
+			
+			<ul class="products">
+
+				
+					<li class="post-124 product type-product status-publish has-post-thumbnail product_cat-raw-bird-nest first instock shipping-taxable purchasable product-type-simple">
+	  
+			<div class="add-to-wishlist-custom add-to-wishlist-124">
+				<div class="yith-wcwl-add-button show" style="display:block"> <a href="/en/?add_to_wishlist=124" rel="nofollow" data-product-id="124" data-product-type="simple" class="add_to_wishlist">Add to Wishlist</a><img src="http://viettranyen.com/wp-content/themes/maxstore/img/loading.gif" class="ajax-loading" alt="loading" width="16" height="16"></div>
+				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback">Added!</span> <a href="http://viettranyen.com/en/wishlist/view/">View Wishlist</a></div>
+				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback">The product is already in the wishlist!</span> <a href="http://viettranyen.com/en/wishlist/view/">Browse Wishlist</a></div>
+				<div class="clear"></div>
+				<div class="yith-wcwl-wishlistaddresponse"></div>
+			</div>
+			<a href="http://viettranyen.com/en/product/raw-birds-nest-b-100g/" class="woocommerce-LoopProduct-link"><img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-B-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="phan_loai_yen_tho-b" title="phan_loai_yen_tho-b" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-B-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-B-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-B-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" /><h3>Raw Bird’s Nest &#8211; B &#8211; 100G</h3>
+
+	<span class="price"><span class="woocommerce-Price-amount amount">2,700,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></span>
+</a><a rel="nofollow" href="/en/?add-to-cart=124" data-quantity="1" data-product_id="124" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a></li>
+
+				
+					<li class="post-123 product type-product status-publish has-post-thumbnail product_cat-raw-bird-nest  instock shipping-taxable purchasable product-type-simple">
+	  
+			<div class="add-to-wishlist-custom add-to-wishlist-123">
+				<div class="yith-wcwl-add-button show" style="display:block"> <a href="/en/?add_to_wishlist=123" rel="nofollow" data-product-id="123" data-product-type="simple" class="add_to_wishlist">Add to Wishlist</a><img src="http://viettranyen.com/wp-content/themes/maxstore/img/loading.gif" class="ajax-loading" alt="loading" width="16" height="16"></div>
+				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback">Added!</span> <a href="http://viettranyen.com/en/wishlist/view/">View Wishlist</a></div>
+				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback">The product is already in the wishlist!</span> <a href="http://viettranyen.com/en/wishlist/view/">Browse Wishlist</a></div>
+				<div class="clear"></div>
+				<div class="yith-wcwl-wishlistaddresponse"></div>
+			</div>
+			<a href="http://viettranyen.com/en/product/raw-birds-nest-100g/" class="woocommerce-LoopProduct-link"><img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-A-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="phan_loai_yen_tho-a" title="phan_loai_yen_tho-a" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-A-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-A-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-A-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" /><h3>Raw Bird’s Nest &#8211; A- 100G</h3>
+
+	<span class="price"><span class="woocommerce-Price-amount amount">3,000,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></span>
+</a><a rel="nofollow" href="/en/?add-to-cart=123" data-quantity="1" data-product_id="123" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a></li>
+
+				
+					<li class="post-121 product type-product status-publish has-post-thumbnail product_cat-proceed-bird-nest  instock sale shipping-taxable purchasable product-type-simple">
+	  
+			<div class="add-to-wishlist-custom add-to-wishlist-121">
+				<div class="yith-wcwl-add-button show" style="display:block"> <a href="/en/?add_to_wishlist=121" rel="nofollow" data-product-id="121" data-product-type="simple" class="add_to_wishlist">Add to Wishlist</a><img src="http://viettranyen.com/wp-content/themes/maxstore/img/loading.gif" class="ajax-loading" alt="loading" width="16" height="16"></div>
+				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback">Added!</span> <a href="http://viettranyen.com/en/wishlist/view/">View Wishlist</a></div>
+				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback">The product is already in the wishlist!</span> <a href="http://viettranyen.com/en/wishlist/view/">Browse Wishlist</a></div>
+				<div class="clear"></div>
+				<div class="yith-wcwl-wishlistaddresponse"></div>
+			</div>
+			<a href="http://viettranyen.com/en/product/raw-clean-edible-birds-nest-b-100g/" class="woocommerce-LoopProduct-link">
+	<span class="onsale">Sale!</span>
+<img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="phan_loai_yen_sach-b" title="phan_loai_yen_sach-b" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-B-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" /><h3>Raw Clean Edible Bird’s Nest &#8211; B &#8211; 100G</h3>
+
+	<span class="price"><del><span class="woocommerce-Price-amount amount">4,900,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">4,500,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span>
+</a><a rel="nofollow" href="/en/?add-to-cart=121" data-quantity="1" data-product_id="121" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a></li>
+
+				
+					<li class="post-99 product type-product status-publish has-post-thumbnail product_cat-proceed-bird-nest last instock sale shipping-taxable purchasable product-type-simple">
+	  
+			<div class="add-to-wishlist-custom add-to-wishlist-99">
+				<div class="yith-wcwl-add-button show" style="display:block"> <a href="/en/?add_to_wishlist=99" rel="nofollow" data-product-id="99" data-product-type="simple" class="add_to_wishlist">Add to Wishlist</a><img src="http://viettranyen.com/wp-content/themes/maxstore/img/loading.gif" class="ajax-loading" alt="loading" width="16" height="16"></div>
+				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback">Added!</span> <a href="http://viettranyen.com/en/wishlist/view/">View Wishlist</a></div>
+				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback">The product is already in the wishlist!</span> <a href="http://viettranyen.com/en/wishlist/view/">Browse Wishlist</a></div>
+				<div class="clear"></div>
+				<div class="yith-wcwl-wishlistaddresponse"></div>
+			</div>
+			<a href="http://viettranyen.com/en/product/proceed-birds-nest-100g/" class="woocommerce-LoopProduct-link">
+	<span class="onsale">Sale!</span>
+<img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="yến sạch A" title="phan_loai_yen_sach-a" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-A-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" /><h3>Raw Clean Edible Bird’s Nest  A &#8211; 100G</h3>
+
+	<span class="price"><del><span class="woocommerce-Price-amount amount">5,300,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">4,900,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span>
+</a><a rel="nofollow" href="/en/?add-to-cart=99" data-quantity="1" data-product_id="99" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a></li>
+
+				
+					<li class="post-82 product type-product status-publish has-post-thumbnail product_cat-proceed-bird-nest first instock sale shipping-taxable purchasable product-type-simple">
+	  
+			<div class="add-to-wishlist-custom add-to-wishlist-82">
+				<div class="yith-wcwl-add-button show" style="display:block"> <a href="/en/?add_to_wishlist=82" rel="nofollow" data-product-id="82" data-product-type="simple" class="add_to_wishlist">Add to Wishlist</a><img src="http://viettranyen.com/wp-content/themes/maxstore/img/loading.gif" class="ajax-loading" alt="loading" width="16" height="16"></div>
+				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback">Added!</span> <a href="http://viettranyen.com/en/wishlist/view/">View Wishlist</a></div>
+				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback">The product is already in the wishlist!</span> <a href="http://viettranyen.com/en/wishlist/view/">Browse Wishlist</a></div>
+				<div class="clear"></div>
+				<div class="yith-wcwl-wishlistaddresponse"></div>
+			</div>
+			<a href="http://viettranyen.com/en/product/clean-product-c-100g/" class="woocommerce-LoopProduct-link">
+	<span class="onsale">Sale!</span>
+<img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="phan_loai_yen_sach-c" title="phan_loai_yen_sach-c" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_sach-C-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" /><h3>Raw Clean Edible Bird’s Nest &#8211; C &#8211; 100g</h3>
+
+	<span class="price"><del><span class="woocommerce-Price-amount amount">4,300,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></del> <ins><span class="woocommerce-Price-amount amount">3,900,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></ins></span>
+</a><a rel="nofollow" href="/en/?add-to-cart=82" data-quantity="1" data-product_id="82" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a></li>
+
+				
+					<li class="post-32 product type-product status-publish has-post-thumbnail product_cat-raw-bird-nest  instock shipping-taxable purchasable product-type-simple">
+	  
+			<div class="add-to-wishlist-custom add-to-wishlist-32">
+				<div class="yith-wcwl-add-button show" style="display:block"> <a href="/en/?add_to_wishlist=32" rel="nofollow" data-product-id="32" data-product-type="simple" class="add_to_wishlist">Add to Wishlist</a><img src="http://viettranyen.com/wp-content/themes/maxstore/img/loading.gif" class="ajax-loading" alt="loading" width="16" height="16"></div>
+				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;"> <span class="feedback">Added!</span> <a href="http://viettranyen.com/en/wishlist/view/">View Wishlist</a></div>
+				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none"> <span class="feedback">The product is already in the wishlist!</span> <a href="http://viettranyen.com/en/wishlist/view/">Browse Wishlist</a></div>
+				<div class="clear"></div>
+				<div class="yith-wcwl-wishlistaddresponse"></div>
+			</div>
+			<a href="http://viettranyen.com/en/product/yen-tho-c-100g-e/" class="woocommerce-LoopProduct-link"><img width="300" height="300" src="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-C-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="phan_loai_yen_tho-c" title="phan_loai_yen_tho-c" srcset="http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-C-300x300.jpg 300w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-C-150x150.jpg 150w, http://viettranyen.com/wp-content/uploads/2016/11/phan_loai_yen_tho-C-180x180.jpg 180w" sizes="(max-width: 300px) 100vw, 300px" /><h3>Yến thô C &#8211; 100g</h3>
+
+	<span class="price"><span class="woocommerce-Price-amount amount">2,400,000&nbsp;<span class="woocommerce-Price-currencySymbol">VNĐ</span></span></span>
+</a><a rel="nofollow" href="/en/?add-to-cart=32" data-quantity="1" data-product_id="32" data-product_sku="" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Add to cart</a></li>
+
+				
+			</ul>
+
+			
+			</div>				</div>                                                       
+			</div>        
+		</div>
+	</div>
+	<!-- end content container -->
+	         
+<footer id="colophon" class="rsrc-footer" role="contentinfo">                
+	<div class="row rsrc-author-credits">                                       
+		<div class="text-center">
+			Proudly powered by <a href="https://wordpress.org/">WordPress</a>			<span class="sep"> | </span>
+			Theme: <a href="http://themes4wp.com/theme/maxstore" title="Free WooCommerce WordPress Theme">MaxStore</a> by Themes4WP		</div>
+	</div>    
+</footer>
+<div id="back-top">  
+	<a href="#top">
+		<span></span>
+	</a>
 </div>
-
-<div class="wix_200">
-
-    <ins class='dcmads' style='display:inline-block;width:200px;height:200px'
-        data-dcm-placement='N34703.1932900TEMPLATEMO.COM/B8599899.120327643'
-        data-dcm-rendering-mode='iframe'
-        data-dcm-https-only
-        data-dcm-resettable-device-id=''
-        data-dcm-app-id=''>
-      <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
-    </ins>
-
 </div>
-
-<div class="wix_200">
-
-    <ins class='dcmads' style='display:inline-block;width:200px;height:200px'
-        data-dcm-placement='N34703.1932900TEMPLATEMO.COM/B8599899.120327702'
-        data-dcm-rendering-mode='iframe'
-        data-dcm-https-only
-        data-dcm-resettable-device-id=''
-        data-dcm-app-id=''>
-      <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
-    </ins>
-
-</div>
-
-<div class="wix_200">
-
-    <ins class='dcmads' style='display:inline-block;width:200px;height:200px'
-        data-dcm-placement='N34703.1932900TEMPLATEMO.COM/B8599899.120327703'
-        data-dcm-rendering-mode='iframe'
-        data-dcm-https-only
-        data-dcm-resettable-device-id=''
-        data-dcm-app-id=''>
-      <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
-    </ins>
-
-</div>        <div class="templatemo_clear"></div>
-	<div class="thumbnail_200">
-        <img src="http://cdn.templatemo.com/thumbnails-200/free-template-481-elevate.jpg" title="Elevate Template" alt="templatemo 481 elevate" border="0" width="200" height="200" class="thumbnail" />
-        <p class="tn_des"><span>Elevate is clean and simple Bootstrap 4.0 responsive theme. This is a minimal layout for making a quick and easy website.</span> <a class="tn_title" href="/tm-481-elevate" target="_parent">Elevate</a></p>
-        <h2 class="thumbnail_200_label"><a href="/tm-481-elevate" title="Elevate Template" target="_parent">481 elevate</a></h2>
-        </div>
-<div class="thumbnail_200">
-        <img src="http://cdn.templatemo.com/thumbnails-200/free-template-480-story.jpg" title="Story Template" alt="templatemo 480 story" border="0" width="200" height="200" class="thumbnail" />
-        <p class="tn_des"><span>The Story is free Bootstrap (v4.0 alpha 2) theme. There are 4 content pages 4 different background images with fade in-out. This is a mobile ready fluid layout. Gallery page uses a flex image slider.</span> <a class="tn_title" href="/tm-480-story" target="_parent">Story</a></p>
-        <h2 class="thumbnail_200_label"><a href="/tm-480-story" title="Story Template" target="_parent">480 story</a></h2>
-        </div>
-<div class="thumbnail_200">
-        <img src="http://cdn.templatemo.com/thumbnails-200/free-template-478-accord.jpg" title="Accord Template" alt="templatemo 478 accord" border="0" width="200" height="200" class="thumbnail" />
-        <p class="tn_des"><span>Accord is a metro style Bootstrap theme with multiple column options. Gallery is a masonry grid layout with image lightbox. Contact form and location map is included.</span> <a class="tn_title" href="/tm-478-accord" target="_parent">Accord</a></p>
-        <h2 class="thumbnail_200_label"><a href="/tm-478-accord" title="Accord Template" target="_parent">478 accord</a></h2>
-        </div>
-<div class="thumbnail_200">
-        <img src="http://cdn.templatemo.com/thumbnails-200/free-template-477-puzzle.jpg" title="Puzzle Template" alt="templatemo 477 puzzle" border="0" width="200" height="200" class="thumbnail" />
-        <p class="tn_des"><span>Puzzle is clean and fresh Bootstrap v3.3.6 one-page template using alternative image and text blocks.</span> <a class="tn_title" href="/tm-477-puzzle" target="_parent">Puzzle</a></p>
-        <h2 class="thumbnail_200_label"><a href="/tm-477-puzzle" title="Puzzle Template" target="_parent">477 puzzle</a></h2>
-        </div>
-		<div class="templatemo_clear"></div>
-    </div><!-- // Thumbnail List -->
-    
-	<!-- new BOX // -->
-	<div id="preview_footer_left">
-    	<h1 class="title_2">
-            <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.templatemo.com" itemprop="url"><span itemprop="title" class="title">templatemo</span></a> 
-                <span class="title"> › </span>
-            </span>
-           
-            <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.templatemo.com/tm-479-sigma" title="Sigma" itemprop="url"><span itemprop="title" class="title">479 sigma</span></a>
-            </span>
-		</h1>
-        <p><a xmlns:cc="http://creativecommons.org/ns#" href="http://www.templatemo.com/tm-479-sigma" property="cc:attributionName" rel="cc:attributionURL">Sigma Template</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Permissions beyond the scope of this license is available <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.templatemo.com/contact" rel="cc:morePermissions">here</a>.</p>
-        <p><strong>Added:</strong> <span>26 January 2016</span> &nbsp;&nbsp; <strong>Downloads:</strong> 15,263</p>
-        <div class="templatemo_clear"></div>
-        
-        <div>
-            <div class="google_plus_preview">
-                <g:plusone size="tall"></g:plusone>
-            </div>
-            
-            <div class="fb-like-preview">
-                <div class="fb-like" data-send="false" data-layout="box_count" data-width="450" data-show-faces="false"></div>
-            </div>
-            
-            <div class="pinterest_preview">
-            	<a rel="nofollow" href="//www.pinterest.com/pin/create/button/?url=http://www.templatemo.com/tm-479-sigma&media=http://cdn.templatemo.com/screenshots/full-template-479-sigma.jpg&description=Sigma Bootstrap 4 theme features metro-style image gallery with responsive lightbox and multiple content columns. This is a fluid layout easy to customize for your website." data-pin-do="buttonPin" data-pin-config="above" data-pin-color="white" data-pin-height="28"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_white_28.png" alt="pinterest" /></a>
-            </div>
-            
-            <div class="cc_preview">
-            	<a rel="license nofollow" href="http://creativecommons.org/licenses/by/4.0/"><img title="Creative Commons License 4.0" alt="Creative Commons License" src="http://i.creativecommons.org/l/by/4.0/88x31.png" border="0" width="88" height="31" /></a>
-            </div>
-        </div>
-
-      	<div class="templatemo_clear h10"></div>
-      
-	  	<div class="templatemo_dl_blue"><a id="tm-view" href="/live/templatemo_479_sigma" rel="nofollow" target="_parent" title="479 sigma">Live View</a></div>
-      	<div class="templatemo_dl_blue"><a id="tm-download" href="/download/templatemo_479_sigma" rel="nofollow" title="479 sigma ZIP file">Download</a></div>
-        <div class="templatemo_dl_green"><a rel="nofollow" href="http://cdn.templatemo.com/screenshots/full-template-479-sigma.jpg" title="479 sigma screenshot">Screenshot</a></div>
-        <div class="templatemo_clear"></div>
-    </div><!-- // new BOX -->
-
-    <div id="preview_footer_right">
-    	<h1 class="title">Tags</h1><div class="paging"><a href="/tag/bootstrap">bootstrap</a><a href="/tag/html5">html5</a><a href="/tag/gallery">gallery</a><a href="/tag/portfolio">portfolio</a><a href="/tag/lightgray">lightgray</a></div><div class="templatemo_clear h10"></div>        <div class="templatemo_clear"></div>
-                <div class="templatemo_clear"></div>
-    </div><!-- footer right // -->
-  </div><!-- one_columm END -->
-    
-</div>
-
-<div id="footer">
-Copyright © 2018 templatemo
-- <a href="/about">About</a>
-- <a href="/external/maxcdn">MaxCDN</a>
-- <a href="/sitemap.html">Sitemap</a>
-</div>
-
-</div>
-<!-- Please call pinit.js only once per page -->
-<script type="text/javascript" async src="//assets.pinterest.com/js/pinit.js"></script>
-<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-732601-9', 'templatemo.com');
-  ga('require', 'displayfeatures');
-  ga('send', 'pageview');
-  
-  document.getElementById('tm-view').onclick = function() 
-  {
-	ga('send', 'event', 'button', 'View', 'templatemo_479_sigma');
-  };
-  document.getElementById('tm-download').onclick = function() 
-  {
-	ga('send', 'event', 'button', 'Download', 'templatemo_479_sigma');
-  };
+<!-- end main container -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/en\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View Cart","cart_url":"http:\/\/viettranyen.com\/en\/gio-hang\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
 </script>
-
-</body>
+<script type='text/javascript' src='//viettranyen.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.6.14'></script>
+<script type='text/javascript' src='//viettranyen.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/en\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//viettranyen.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=2.6.14'></script>
+<script type='text/javascript' src='//viettranyen.com/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/en\/?wc-ajax=%%endpoint%%","fragment_name":"wc_fragments"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://viettranyen.com/wp-content/plugins/woo-poly-integration/public/js/Cart.js?ver=0.29.1'></script>
+<script type='text/javascript' src='http://viettranyen.com/wp-includes/js/wp-embed.min.js?ver=4.7.11'></script>
+    	<script type="text/javascript">
+		(function($) {
+		$(function(){
+			if( typeof(wc_product_sliders_app) !== 'undefined' ) {
+				wc_product_sliders_app.start();
+			}
+		});
+		})(jQuery);
+		</script>
+    </body>
 </html>
+	
